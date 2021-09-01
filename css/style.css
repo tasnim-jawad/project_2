@@ -1,7 +1,7 @@
 :root{
     --pg:#555555;
-    --brand1:#0872b9;
-    --brand2:#e25bf4;
+    --brand1:#ffc155;
+    --brand2:#709dc9;
     --brand3:blue;
     --white:#ffffff;
     --black:#353535;
@@ -22,6 +22,7 @@
 }
 #nav .nav_link{
     display:flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     
 }
@@ -165,7 +166,10 @@
     background-color: #ffc155;
     margin-top: 95px;
 }
-
+#about .about_body{
+    display: flex;
+    flex-wrap: wrap;
+}
 #about .left_image{
     flex-basis: 50%;
     padding: 0px;
@@ -283,7 +287,8 @@
 }
 #gallery .gallery_nav ul{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 45px;
     margin-bottom: 35px;
 }
@@ -302,13 +307,71 @@
     border-radius: 3px;
     transition: all linear .3s;
 }
+
 #gallery .gallery_image_section .gallery_image{
     width: 100%;
     height: 100%;
+    position: relative;
+    overflow: hidden;
+    
 }
 #gallery .gallery_image_section .gallery_image img{
     width: 100%;
     height: 100%;
+}
+#gallery .gallery_image_section .gallery_image .overlay{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #ffc1558f ;
+    text-align: center;
+    visibility: hidden;
+    transition: all linear .3s;
+    opacity: 0;
+    top: -100%;
+}
+#gallery .gallery_image_section .gallery_image:hover .overlay{
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+}
+#gallery .gallery_image_section .gallery_image .overlay .eye_circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 19px;
+    background-color: rgba(255,255,255,0);
+    border: 1px solid #ffffff;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+#gallery .gallery_image_section .gallery_image .overlay .eye_circle a{
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 12px;
+}
+#gallery .gallery_image_section .gallery_image .overlay h3{
+    font-size: 17px;
+    line-height: 23px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'open-sans-regular';
+    text-align: center;
+}
+#gallery .gallery_image_section .gallery_image .overlay p{
+    font-size: 13px;
+    line-height: 23px;
+    color: #ffffff;
+    font-weight: 4000;
+    font-family: 'open-sans-regular';
+    text-align: center;
 }
 
 /* gallery part end */
